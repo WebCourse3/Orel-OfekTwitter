@@ -1,22 +1,63 @@
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" type="text/css" href="css/Sign.css">
 </head>
 
 <body>
 
-<div class="navbar">
-	<div>
-		<image src="images/ofek.png" style="height: 35px;"/>
-	</div>
-	<a class="logo" href="./index.html">OfekTwitter</a>
+<nav class="navbar navbar-default" style="background-color: dodgerblue;">
+	<div class="container-fluid">
 
-	<div class="buttonContainer">
-		<div class="innerButtonContainer">
-			<a href="./users.html">Users</a>
-			<a href="./SignUp.html">Sign up</a>
-			<a href="./SignIn.html">Sign in</a>
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<img src="images/ofek.png" class="nav navbar-left" style="height: 40px;"/>
+			<a class="navbar-brand navbar nav-text" href="index.html" style="color: white">
+				OfekTwitter
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="users.html" style="color: white">Users</a></li>
+				<li><a href="SignIn.html" style="color: white">Sign in</a></li>
+				<li><a href="SignUp.html" style="color: white">Sign up</a></li>
+
+			</ul>
+
+		</div>
+	</div>
+</nav>
+
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="panel panel-primary form-group">
+			<div class="panel-heading">Sign In</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-2 col-md-offset-3">
+						<label>UserName</label>
+					</div>
+					<div class="col-md-4">
+						<input type="text" class="form-control col-md-2">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2 col-md-offset-3">
+						<label>Password</label>
+					</div>
+					<div class="col-md-4">
+						<input type="password" class="form-control">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-offset-3">
+						<button type="submit" class="btn btn-primary pull-right">Publish</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -24,15 +65,6 @@
 <div align="center">
 	<form>
 		<table style="margin-top: 15px; border: 1px solid gray;">
-			<th colspan="2">Sign In</th>
-			<tr>
-				<td>UserName</td>
-				<td> <input type="text"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td> <input type="password"></td>
-			</tr>
 			<tr><td colspan="2" style="direction: rtl"><input type="submit" value="Submit"></td></tr>
 		</table>
 	</form>
