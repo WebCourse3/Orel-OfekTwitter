@@ -2,12 +2,6 @@
     background-color: #294aff;
 }
 
-ul
-{
-
-
-}
-
 a{
     padding-right: 15px;
     text-decoration: none;
@@ -61,13 +55,16 @@ li table{
     height: 7%;
 }
 
-td.users{
+.users{
     text-align: center;
     border: 1px solid #a3a2a2;
     width: 100px;
     height: 120px;
 }
 
-tr{
 
+
+div.followers{
+    /*position: absolute;*/
+    direction: rtl;
 }
