@@ -4,8 +4,8 @@
 
 ul
 {
-   
-   
+
+
 }
 
 a{
@@ -35,7 +35,7 @@ a:link {
 }
 
 .buttonContainer{
-    
+
     direction: rtl;
 }
 
@@ -49,7 +49,7 @@ a:link {
 li{
     list-style-image: url("../images/useravatar.png");
     margin-top : 10px;
-    
+
 }
 
 li table{
@@ -59,4 +59,15 @@ li table{
 .tweetTextArea{
     width:50%;
     height: 7%;
+}
+
+td.users{
+    text-align: center;
+    border: 1px solid #a3a2a2;
+    width: 100px;
+    height: 120px;
+}
+
+tr{
+
 }
