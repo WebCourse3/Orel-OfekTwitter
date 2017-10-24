@@ -1,0 +1,62 @@
+.navbar{
+    background-color: #294aff;
+}
+
+ul
+{
+   
+   
+}
+
+a{
+    padding-right: 15px;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+a:link {
+    color: white;
+}
+
+
+.logo{
+    color:white;
+    position: absolute;
+    padding-left: 45px;
+    margin-top: -25px;
+}
+
+.container{
+    margin-top: 1%;
+}
+
+.buttonContainer{
+    
+    direction: rtl;
+}
+
+.innerButtonContainer{
+    position: absolute;
+    margin-top: -25px;
+    margin-right: 5px;
+    color:white;
+}
+
+li{
+    list-style-image: url("../images/useravatar.png");
+    margin-top : 10px;
+    
+}
+
+li table{
+    margin-top: -50px;
+}
+
+.tweetTextArea{
+    width:50%;
+    height: 7%;
+}
