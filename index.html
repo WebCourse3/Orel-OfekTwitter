@@ -2,6 +2,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+
 </head>
 
 <body>
@@ -28,51 +30,32 @@
 </nav>
 
 <!-- Publish tweet -->
-<div class="container">
-	<form align="center" class="form-group">
+<div class="container form-group">
 		<textarea class="form-control" rows="5" placeholder="Tweet text..." id="comment"></textarea>
-		<button type="submit" class="btn btn-primary pull-right">Publish</button>
-	</form>
+		<button class="btn btn-primary pull-right" onclick="addTweet()">Publish</button>
 
 	<!-- All Tweets -->
 	<div class="row">
-		<div class="col-md-6">
+		<div id="allTweets" class="col-md-6">
+
+<!--
 
 			<div class="row top-buffer">
 				<div class="col-md-2">
 					<img src="images/useravatar.png"/>
 				</div>
-				<div class="text-bold">Orel Zluf says:</div>
-				<div>Bla Bla Bla...</div>
+				<div id="username" class="text-bold">Orel Zluf says:</div>
+				<div id="text">Bla Bla Bla...</div>
 			</div>
 
-			<div class="row top-buffer">
-				<div class="col-md-2">
-					<img src="images/useravatar.png"/>
-				</div>
-				<div class="text-bold">Orel Zluf says:</div>
-				<div>Bla Bla Bla...</div>
-			</div>
-
-			<div class="row top-buffer">
-				<div class="col-md-2">
-					<img src="images/useravatar.png"/>
-				</div>
-				<div class="text-bold">Orel Zluf says:</div>
-				<div>Bla Bla Bla...</div>
-			</div>
-
-			<div class="row top-buffer">
-				<div class="col-md-2">
-					<img src="images/useravatar.png"/>
-				</div>
-				<div class="text-bold">Orel Zluf says:</div>
-				<div>Bla Bla Bla...</div>
-			</div>
+-->
 
 		</div>
 	</div>
 </div>
+
+<script src="./js/index.js"></script>
+
 </body>
 
 </html>
