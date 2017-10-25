@@ -46,7 +46,7 @@
             <img src="images/useravatar.png"/>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button type="submit" title="follow" class="btn btn-primary top-buffer" onclick="followButtonClick(this)">Follow</button>
         </div>
         <div class="row">
             <div class="top-buffer">Orel Zluf</div>
@@ -58,7 +58,7 @@
             <img src="images/useravatar.png"/>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button type="submit" title="follow" class="btn btn-primary top-buffer" onclick="followButtonClick(this)">Follow</button>
         </div>
         <div class="row">
             <div class="top-buffer">Orel Zluf</div>
@@ -70,7 +70,7 @@
             <img src="images/useravatar.png"/>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button type="submit" title="follow" class="btn btn-primary top-buffer" onclick="followButtonClick(this)">Follow</button>
         </div>
         <div class="row">
             <div class="top-buffer">Orel Zluf</div>
@@ -82,7 +82,7 @@
             <img src="images/useravatar.png"/>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button type="submit" title="follow" class="btn btn-primary top-buffer" onclick="followButtonClick(this)">Follow</button>
         </div>
         <div class="row">
             <div class="top-buffer">Orel Zluf</div>
@@ -94,7 +94,7 @@
             <img src="images/useravatar.png"/>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button type="submit" title="follow" class="btn btn-primary top-buffer" onclick="followButtonClick(this)">Follow</button>
         </div>
         <div class="row">
             <div class="top-buffer">Orel Zluf</div>
@@ -106,7 +106,7 @@
             <img src="images/useravatar.png"/>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button type="submit" title="follow" class="btn btn-primary top-buffer" onclick="followButtonClick(this)">Follow</button>
         </div>
         <div class="row">
             <div class="top-buffer">Orel Zluf</div>
@@ -118,7 +118,7 @@
             <img src="images/useravatar.png"/>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button type="submit" title="follow" class="btn btn-primary top-buffer" onclick="followButtonClick(this)">Follow</button>
         </div>
         <div class="row">
             <div class="top-buffer">Orel Zluf</div>
@@ -130,7 +130,7 @@
             <img src="images/useravatar.png"/>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button type="submit" title="follow" class="btn btn-primary top-buffer" onclick="followButtonClick(this)">Follow</button>
         </div>
         <div class="row">
             <div class="top-buffer">Orel Zluf</div>
@@ -142,7 +142,7 @@
             <img src="images/useravatar.png"/>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button type="submit" title="follow" class="btn btn-primary top-buffer" onclick="followButtonClick(this)">Follow</button>
         </div>
         <div class="row">
             <div class="top-buffer">Orel Zluf</div>
@@ -154,7 +154,7 @@
             <img src="images/useravatar.png"/>
         </div>
         <div class="row">
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button type="submit" title="follow" class="btn btn-primary top-buffer" onclick="followButtonClick(this)">Follow</button>
         </div>
         <div class="row">
             <div class="top-buffer">Orel Zluf</div>
@@ -162,17 +162,17 @@
     </div>
 </div>
 
-<!-- Show all Followers -->
-<div class="row form-group col-md-2 col-md-offset-1 top-buffer list-group-item">
+<!-- Show all Followees -->
+<div id="showAllFollowees" class="row form-group col-md-2 col-md-offset-1 top-buffer list-group-item">
 
     <div class="row text-center">
-        <h1>Followers</h1>
+        <h1>Followees</h1>
     </div>
 
     <div class="row list-group-item top-buffer col-md-9 col-md-offset-1 text-center">
         <div>
             <img src="images/useravatar.png"/>
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button title="unfollow" type="submit" class="btn btn-danger top-buffer" onclick="followButtonClick(this)">Unfollow</button>
             <div class="top-buffer">Orel Zluf</div>
         </div>
     </div>
@@ -180,11 +180,13 @@
     <div class="row list-group-item top-buffer col-md-9 col-md-offset-1 text-center">
         <div>
             <img src="images/useravatar.png"/>
-            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <button title="unfollow" type="submit" class="btn btn-danger top-buffer" onclick="followButtonClick(this)">Unfollow</button>
             <div class="top-buffer">Orel Zluf</div>
         </div>
     </div>
 </div>
+
+<script src="./js/users.js"></script>
 
 </body>
 </html>
