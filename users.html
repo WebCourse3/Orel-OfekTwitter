@@ -1,126 +1,193 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
 <body>
 
 <nav class="navbar navbar-default" style="background-color: dodgerblue;">
-	<div class="container-fluid">
+    <div class="container-fluid">
 
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<img src="images/ofek.png" class="nav navbar-left" style="height: 40px;"/>
-			<a class="navbar-brand navbar nav-text" href="index.html" style="color: white">
-				OfekTwitter
-			</a>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="users.html" style="color: white">Users</a></li>
-				<li><a href="SignIn.html" style="color: white">Sign in</a></li>
-				<li><a href="SignUp.html" style="color: white">Sign up</a></li>
-
-			</ul>
-
-		</div>
-	</div>
-</nav>
-
-<div style="margin-right: 200px">
-    <div class="container" align="center" style="margin-right: 150px">
-
-        <div>
-            Filter by
-            <input type="text" placeholder="User Name">
-            <input type="button" value="ok">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <img src="images/ofek.png" class="nav navbar-left" style="height: 40px;"/>
+            <a class="navbar-brand navbar nav-text" href="index.html" style="color: white">
+                OfekTwitter
+            </a>
         </div>
 
-        <table>
-            <tr>
-                <td class="users">
-                    <img src="images/useravatar.png"/>
-                    <br/>
-                    <button type="submit">Follow</button>
-                    <br/>
-                    Orel Zluf
-                </td>
-                <td class="users">
-                    <img src="images/useravatar.png"/>
-                    <br/>
-                    <button type="submit">Follow</button>
-                    <br/>
-                    Orel Zluf
-                </td>
-                <td class="users">
-                    <img src="images/useravatar.png"/>
-                    <br/>
-                    <button type="submit">Follow</button>
-                    <br/>
-                    Orel Zluf
-                </td>
-                <td class="users">
-                    <img src="images/useravatar.png"/>
-                    <br/>
-                    <button type="submit">Follow</button>
-                    <br/>
-                    Orel Zluf
-                </td>
-                <td class="users">
-                    <img src="images/useravatar.png"/>
-                    <br/>
-                    <button type="submit">Follow</button>
-                    <br/>
-                    Orel Zluf
-                </td>
-            </tr>
-            <tr>
-                <td class="users">
-                    <img src="images/useravatar.png"/>
-                    <br/>
-                    <button type="submit">Follow</button>
-                    <br/>
-                    Orel Zluf
-                </td>
-                <td class="users">
-                <img src="images/useravatar.png"/>
-                <br/>
-                <button type="submit">Follow</button>
-                <br/>
-                Orel Zluf
-            </td>
-            </tr>
-        </table>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="users.html" style="color: white">Users</a></li>
+                <li><a href="SignIn.html" style="color: white">Sign in</a></li>
+                <li><a href="SignUp.html" style="color: white">Sign up</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="followers" style="margin-top: -250px">
+</nav>
 
-        <table class="users">
 
-            <th>Followers</th>
-            <tr>
-                <td class="users">
-                    <img src="images/useravatar.png"/>
-                    <br/>
-                    <button type="submit">Follow</button>
-                    <br/>
-                    Orel Zluf
-                </td>
-            </tr>
-            <tr>
-                <td class="users">
-                    <img src="images/useravatar.png"/>
-                    <br/>
-                    <button type="submit">Follow</button>
-                    <br/>
-                    Orel Zluf
-                </td>
-            </tr>
-        </table>
+<div class="row">
+    <div class="col-md-3 col-md-offset-1">
+        <input type="text" class="form-control" placeholder="Filter by user name">
+    </div>
+    <div class="col-md-1">
+        <button type="submit" class="btn btn-primary pull-right">OK</button>
+    </div>
+
+</div>
+
+
+<div class="row form-group col-md-9 top-buffer">
+
+    <div class="col-md-1 col-md-offset-1 text-center list-group-item">
+        <div class="row">
+            <img src="images/useravatar.png"/>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+        </div>
+        <div class="row">
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+    <div class="col-md-1 col-md-offset-1 text-center list-group-item">
+        <div class="row">
+            <img src="images/useravatar.png"/>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+        </div>
+        <div class="row">
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+    <div class="col-md-1 col-md-offset-1 text-center list-group-item">
+        <div class="row">
+            <img src="images/useravatar.png"/>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+        </div>
+        <div class="row">
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+    <div class="col-md-1 col-md-offset-1 text-center list-group-item">
+        <div class="row">
+            <img src="images/useravatar.png"/>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+        </div>
+        <div class="row">
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+    <div class="col-md-1 col-md-offset-1 text-center list-group-item">
+        <div class="row">
+            <img src="images/useravatar.png"/>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+        </div>
+        <div class="row">
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+    <div class="col-md-1 col-md-offset-1 text-center list-group-item">
+        <div class="row">
+            <img src="images/useravatar.png"/>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+        </div>
+        <div class="row">
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+    <div class="col-md-1 col-md-offset-1 top-buffer text-center list-group-item">
+        <div class="row">
+            <img src="images/useravatar.png"/>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+        </div>
+        <div class="row">
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+    <div class="col-md-1 col-md-offset-1 top-buffer text-center list-group-item">
+        <div class="row">
+            <img src="images/useravatar.png"/>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+        </div>
+        <div class="row">
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+    <div class="col-md-1 col-md-offset-1 top-buffer text-center list-group-item">
+        <div class="row">
+            <img src="images/useravatar.png"/>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+        </div>
+        <div class="row">
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+    <div class="col-md-1 col-md-offset-1 top-buffer text-center list-group-item">
+        <div class="row">
+            <img src="images/useravatar.png"/>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+        </div>
+        <div class="row">
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
     </div>
 </div>
-</body>
 
+<div class="row form-group col-md-2 col-md-offset-1 top-buffer list-group-item">
+
+    <div class="row text-center">
+        <h1>Followers</h1>
+    </div>
+
+    <div class="row list-group-item top-buffer col-md-9 col-md-offset-1 text-center">
+        <div>
+            <img src="images/useravatar.png"/>
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+    <div class="row list-group-item top-buffer col-md-9 col-md-offset-1 text-center">
+        <div>
+            <img src="images/useravatar.png"/>
+            <button type="submit" class="btn btn-primary top-buffer">Follow</button>
+            <div class="top-buffer">Orel Zluf</div>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
 </html>

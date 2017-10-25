@@ -30,26 +30,47 @@
 	</div>
 </nav>
 
-<div align="center">
-	<form>
-		<table style="margin-top: 15px; border: 1px solid gray;">
-			<th colspan="2">Sign up</th>
-			<tr>
-				<td>UserName</td>
-				<td> <input type="text"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td> <input type="password"></td>
-			</tr>
-			<tr>
-				<td>Confirm Password</td>
-				<td> <input type="password"></td>
-			</tr>
-			<tr><td colspan="2" style="direction: rtl"><input type="submit" value="Submit"></td></tr>
-		</table>
-	</form>
-</div>
+<form>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-primary form-group">
+				<div class="panel-heading">Sign up</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-3 col-md-offset-2">
+							<label>UserName</label>
+						</div>
+						<div class="col-md-4">
+							<input type="text" class="form-control col-md-2">
+						</div>
+					</div>
+					<div class="row top-buffer">
+						<div class="col-md-3 col-md-offset-2">
+							<label>Password</label>
+						</div>
+						<div class="col-md-4">
+							<input type="password" class="form-control">
+						</div>
+					</div>
+					<div class="row top-buffer">
+						<div class="col-md-3 col-md-offset-2">
+							<label>Confirm Password</label>
+						</div>
+						<div class="col-md-4">
+							<input type="password" class="form-control">
+						</div>
+					</div>
+					<div class="row">
+						<div class="top-buffer">
+							<button type="submit" class="btn btn-primary center-block">Sumbit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
 
 </body>
 </html>

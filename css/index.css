@@ -5,3 +5,15 @@
 .borderless {
 	border-top: 0 none;
 }
+
+.top-buffer{
+	margin-top: 3%;
+}
+
+.logo-pic{
+	height: 40px;
+}
+
+.logo-color{
+	color: white;
+}
