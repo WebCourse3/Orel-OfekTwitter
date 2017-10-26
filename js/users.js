@@ -137,26 +137,37 @@ function followButtonClick(obj){
 
 function filter(filterName){
 
-	var allUsersDiv = document.querySelectorAll("div[title='userName']");
+	var allUsers = document.getElementById("showAllUsers").childNodes;
 
-	allUsersDiv.forEach(function(currUserDiv){
-
-		var selecteduserNameDiv = currUserDiv.parentNode;
-		var selectedUserDiv = selecteduserNameDiv.parentNode;
-
-		if (selectedUserDiv.parentNode["id"] == "showAllUsers") {
-
-			if (currUserDiv.innerHTML.startsWith(filterName)) {
-
-				selectedUserDiv.style.visibility = 'visible';
-
-				console.log(selectedUserDiv.parentNode["id"]);
-			}
-			else {
-				selectedUserDiv.style.visibility = 'hidden';
-			}
-		}
+	allUsers.forEach(function(currUser){
+		// if(currUser.id.startsWith(filterName)){
+		// 	currUser.classList.add("invisible");
+		// }
+		// else{
+		// 	currUser.classList.remove("invisible");
+		// }
 	});
+
+	// var allUsersDiv = document.querySelectorAll("div[title='userName']");
+	//
+	// allUsersDiv.forEach(function(currUserDiv){
+	//
+	// 	var selecteduserNameDiv = currUserDiv.parentNode;
+	// 	var selectedUserDiv = selecteduserNameDiv.parentNode;
+	//
+	// 	if (selectedUserDiv.parentNode["id"] == "showAllUsers") {
+	//
+	// 		if (currUserDiv.innerHTML.startsWith(filterName)) {
+	//
+	// 			selectedUserDiv.style.visibility = 'visible';
+	//
+	// 			console.log(selectedUserDiv.parentNode["id"]);
+	// 		}
+	// 		else {
+	// 			selectedUserDiv.style.visibility = 'hidden';
+	// 		}
+	// 	}
+	// });
 }
 
 
