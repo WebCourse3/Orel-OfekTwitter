@@ -75,7 +75,7 @@ function showUser(username, container, status){
 	// Button
 	var newButton = document.createElement("button");
 	newButton.addEventListener("click", function(){
-		followButtonClick(this)
+		followButtonClick(this);
 	});
 
 	newButton.name = username;
@@ -161,7 +161,6 @@ function filter(filterName){
 		}
 	});
 }
-
 
 Init();
 
