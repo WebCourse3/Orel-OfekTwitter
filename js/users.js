@@ -151,13 +151,6 @@ function filter(filterName){
 			if (currUser.startsWith(filterName)) {
 				filterUsers.push(currUser);
 			}
-			else {
-				var index = filterUsers.indexOf(currUser);
-				if(index >= 0){
-					filterUsers.splice(index, 1);
-
-				}
-			}
 		}
 	});
 }
