@@ -1,0 +1,58 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/testing.css">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav class="navbar navbar-default nav-color">
+	<div class="container-fluid">
+
+		<div class="navbar-header">
+			<img src="images/ofek.png" class="nav navbar-left logo-pic"/>
+			<a class="navbar-brand navbar nav-text logo-color" href="index.html">
+				OfekTwitter
+			</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="users.html" style="color: white">Users</a></li>
+				<li><a href="SignIn.html" style="color: white">Sign in</a></li>
+				<li><a href="SignUp.html" style="color: white">Sign up</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!-- Publish tweet -->
+<div class="container form-group">
+		<textarea class="form-control" rows="5" placeholder="Tweet text..." id="comment"></textarea>
+		<button class="btn btn-primary pull-right" onclick="addTweet()">Publish</button>
+
+	<!-- All Tweets -->
+	<div class="row">
+		<div id="allTweets" class="col-md-6">
+
+		</div>
+	</div>
+</div>
+
+<div class="row">
+
+	<div id="testingDiv" class="col-md-10 col-md-offset-1">
+
+	</div>
+
+</div>
+
+<script src="./js/testing.js"></script>
+<script src="./js/index.js"></script>
+
+</body>
+
+</html>
