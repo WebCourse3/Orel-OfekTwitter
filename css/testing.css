@@ -7,3 +7,8 @@ li{
 
 	border-style: ridge;
 }
+
+.border{
+	border-style: ridge;
+	border-color: rgba(54,62,57,0.89);
+}

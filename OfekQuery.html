@@ -1,0 +1,69 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/OfekQuery.css">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav class="navbar navbar-default nav-color">
+	<div class="container-fluid">
+
+		<div class="navbar-header">
+			<img src="images/ofek.png" class="nav navbar-left logo-pic"/>
+			<a class="navbar-brand navbar nav-text logo-color" href="index.html">
+				OfekTwitter
+			</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="users.html" style="color: white">Users</a></li>
+				<li><a href="SignIn.html" style="color: white">Sign in</a></li>
+				<li><a href="SignUp.html" style="color: white">Sign up</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="border fancy" style="height: 300px">
+	<div class = "pretty-box" style="height: 200px">
+		<div id="baba-man">
+			<ul id="2">
+				<li></li><li></li>
+			</ul>
+			<ul id="3">
+				<li></li><li></li><li></li>
+			</ul>
+			<ul id="5">
+				<li></li><li></li><li></li><li></li><li></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script src="./js/OfekQuery.js"></script>
+
+<script>
+
+
+
+	//$('div'); // returns an OfekQuery object of all of the div elements in the page
+	//$('div.fancy'); // returns an OfekQuery object of all div elements that have descendant elements of class "fancy"
+	//$('#baba-man') // returns an OfekQuery object of the element with id "baba-man"
+	//$('.pretty-box').addClass('big-box') // adds the "big-box" class to all of the elements of class "pretty-box"
+//	$('ul').filter(function (el) {
+//		return (el.childElementCount === 2);
+//	}) // returns a new OfekQuery object containing all ul elements that have exactly 2 children elements
+	 $('ul').any(function (el) {
+	 	return el.childElementCount>=5;
+	 }) // returns true if any ul elements have more than 5 children elements
+
+</script>
+
+</body>
+
+</html>
