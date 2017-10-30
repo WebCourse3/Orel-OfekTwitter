@@ -30,6 +30,8 @@
 					var hierarchialList = [];
 					var checkHierarchialList = [];
 
+					var elementsToDelete = [];
+
 					var elementsArr = document.getElementsByTagName(arr[arr.length - 1]);
 
 					for (var currIndex = arr.length - 2; currIndex >= 0 ; currIndex--){
@@ -46,8 +48,9 @@
 							}
 							else {
 								if (elementsArr[innerIndex].parentElement.tagName != arr[currIndex].toUpperCase()) {
-									// hierarchialList.remove(elementsArr[innerIndex]);
-									// checkHierarchialList.remove(elementsArr[innerIndex]);
+									//hierarchialList.splice(innerIndex, 1);
+									elementsToDelete.push(innerIndex);
+
 								}
 								else {
 
@@ -56,6 +59,12 @@
 							}
 						}
 
+						// Delete the elements
+						for (var deleteIndex = 0; deleteIndex < elementsToDelete.length; deleteIndex++){
+							hierarchialList.splice(elementsToDelete[deleteIndex], 1);
+						}
+
+						elementsToDelete = [];
 						elementsArr = checkHierarchialList;
 						checkHierarchialList = [];
 					}
