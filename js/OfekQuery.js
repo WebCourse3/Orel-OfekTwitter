@@ -13,16 +13,6 @@
 			var returnValue;
 
 			switch (true){
-				// Class
-				case (query.startsWith('.')):
-					returnValue = document.getElementsByClassName(query.substring(1, query.length));
-
-					break;
-				// ID
-				case (query.startsWith('#')):
-					returnValue = document.getElementById(query.substring(1, query.length));
-
-					break;
 				// Hierarchical
 				case (query.indexOf(' ') != -1):
 
@@ -32,35 +22,94 @@
 
 					var elementsToDelete = [];
 
-					var elementsArr = document.getElementsByTagName(arr[arr.length - 1]);
+					// Select the inner element
+					if (arr[arr.length - 1].startsWith('.')){
+						var elementsArr = document.getElementsByClassName(arr[arr.length - 1].substring(1, arr[arr.length - 1].length));
+					}
+					else if (arr[arr.length - 1].startsWith('#')){
+						var elementsArr = document.getElementById(arr[arr.length - 1].substring(1, arr[arr.length - 1].length));
+					}
+					else {
+						var elementsArr = document.getElementsByTagName(arr[arr.length - 1]);
+					}
 
+					//
 					for (var currIndex = arr.length - 2; currIndex >= 0 ; currIndex--){
-
-
 
 						for (var innerIndex = 0; innerIndex < elementsArr.length; innerIndex++){
 
 							if (currIndex == arr.length - 2) {
-								if (elementsArr[innerIndex].parentElement.tagName === arr[currIndex].toUpperCase()) {
+
+								var parentElementName;
+
+								if (arr[currIndex].startsWith('.')){
+									parentElementName = elementsArr[innerIndex].parentElement.classList;
+
+									if (parentElementName.contains(arr[currIndex].toLowerCase().substring(1, arr[currIndex].length))) {
+										hierarchialList.push(elementsArr[innerIndex]);
+										checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+									}
+
+								}
+								else if (arr[currIndex].startsWith('#')){
+									parentElementName = elementsArr[innerIndex].parentElement.id;
+
+									if (parentElementName == arr[currIndex].toLowerCase().substring(1, arr[currIndex].length)) {
+										hierarchialList.push(elementsArr[innerIndex]);
+										checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+									}
+								}
+								else {
+									parentElementName = elementsArr[innerIndex].parentElement.tagName;
+								}
+
+								if (parentElementName === arr[currIndex].toUpperCase()) {
 									hierarchialList.push(elementsArr[innerIndex]);
 									checkHierarchialList.push(elementsArr[innerIndex].parentElement);
 								}
 							}
 							else {
-								if (elementsArr[innerIndex].parentElement.tagName != arr[currIndex].toUpperCase()) {
-									//hierarchialList.splice(innerIndex, 1);
-									elementsToDelete.push(innerIndex);
 
+								var parentElementName;
+
+								if (arr[currIndex].startsWith('.')){
+									parentElementName = elementsArr[innerIndex].parentElement.classList;
+
+									if (parentElementName.contains(arr[currIndex].toLowerCase().substring(1, arr[currIndex].length))) {
+										checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+									}
+								}
+								else if (arr[currIndex].startsWith('#')){
+									parentElementName = elementsArr[innerIndex].parentElement.id;
+
+									if (parentElementName == arr[currIndex].toLowerCase().substring(1, arr[currIndex].length)) {
+										checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+									}
 								}
 								else {
+									parentElementName = elementsArr[innerIndex].parentElement.tagName;
+								}
 
+								if (arr[currIndex].startsWith('.') &&
+									(parentElementName.contains(arr[currIndex].toLowerCase().substring(1, arr[currIndex].length)))){
+
+									checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+								}
+								else if (arr[currIndex].startsWith('#') &&
+										 parentElementName == arr[currIndex].toLowerCase().substring(1, arr[currIndex].length)){
+									checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+								}
+								else if (parentElementName != arr[currIndex].toUpperCase()) {
+									elementsToDelete.push(innerIndex);
+								}
+								else {
 									checkHierarchialList.push(elementsArr[innerIndex].parentElement);
 								}
 							}
 						}
 
 						// Delete the elements
-						for (var deleteIndex = 0; deleteIndex < elementsToDelete.length; deleteIndex++){
+						for (var deleteIndex = elementsToDelete.length - 1; deleteIndex >= 0; deleteIndex--){
 							hierarchialList.splice(elementsToDelete[deleteIndex], 1);
 						}
 
@@ -70,6 +119,16 @@
 					}
 
 					return (hierarchialList);
+
+					break;
+				// Class
+				case (query.startsWith('.')):
+					returnValue = document.getElementsByClassName(query.substring(1, query.length));
+
+					break;
+				// ID
+				case (query.startsWith('#')):
+					returnValue = document.getElementById(query.substring(1, query.length));
 
 					break;
 				// Tag
