@@ -42,16 +42,17 @@
 
 						// If class
 						if (splittedArr[currIndex].startsWith('.')) {
+
 							parentElementName = elementsArr[innerIndex].parentElement.classList;
 
 							if (parentElementName.contains(splittedArr[currIndex].substring(1, splittedArr[currIndex].length))) {
 								hierarchialList.push(elementsArr[innerIndex]);
 								checkHierarchialList.push(elementsArr[innerIndex].parentElement);
 							}
-
 						}
 						// If ID
 						else if (splittedArr[currIndex].startsWith('#')) {
+
 							parentElementName = elementsArr[innerIndex].parentElement.id;
 
 							if (parentElementName == splittedArr[currIndex].substring(1, splittedArr[currIndex].length)) {
@@ -61,6 +62,7 @@
 						}
 						// If tagName
 						else {
+
 							parentElementName = elementsArr[innerIndex].parentElement.tagName;
 
 							if (parentElementName === splittedArr[currIndex].toUpperCase()) {
@@ -104,6 +106,7 @@
 
 
 							if (parentElementName == splittedArr[currIndex].toUpperCase()) {
+
 								checkHierarchialList.push(elementsArr[innerIndex].parentElement);
 							}
 							else {
@@ -115,6 +118,7 @@
 
 				// Delete the elements
 				for (var deleteIndex = elementsToDelete.length - 1; deleteIndex >= 0; deleteIndex--) {
+
 					hierarchialList.splice(elementsToDelete[deleteIndex], 1);
 				}
 
@@ -148,26 +152,7 @@
 					break;
 				// Tag
 				default :
-
-					// If tag not contain class
-					if (query.indexOf('.') == -1){
-						returnValue = document.getElementsByTagName(query);
-						console.log('Tag');
-					}
-					else {
-						returnValue = document.getElementsByTagName(query.slice(0,query.indexOf('.')));
-						var newReturnValue = [];
-
-						// Select the tags with the class
-						for (var currIndex = 0; currIndex < returnValue.length; currIndex++){
-							if (returnValue[currIndex].classList.contains(query.slice(query.indexOf('.') + 1, query.length))) {
-								newReturnValue.push(returnValue[currIndex]);
-							}
-						}
-
-						returnValue = newReturnValue;
-						console.log('Tag and class');
-					}
+					returnValue = document.getElementsByTagName(query);
 
 					break;
 			}
