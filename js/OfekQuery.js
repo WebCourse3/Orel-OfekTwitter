@@ -8,117 +8,132 @@
 			this.result = this.queryExecution(query);
 		}
 
+
+		hierarchicalSelect (query){
+
+			var returnValue;
+
+			var splittedArr = query.split(" ");
+			var hierarchialList = [];
+			var checkHierarchialList = [];
+			var elementsToDelete = [];
+
+			// Select the inner element by type
+			if (splittedArr[splittedArr.length - 1].startsWith('.')) {
+				var elementsArr = document.getElementsByClassName(splittedArr[splittedArr.length - 1].substring(1, splittedArr[splittedArr.length - 1].length));
+			}
+			else if (splittedArr[splittedArr.length - 1].startsWith('#')) {
+				var elementsArr = document.getElementById(splittedArr[splittedArr.length - 1].substring(1, splittedArr[splittedArr.length - 1].length));
+			}
+			else {
+				var elementsArr = document.getElementsByTagName(splittedArr[splittedArr.length - 1]);
+			}
+
+			// Run on the hierarchial array
+			for (var currIndex = splittedArr.length - 2; currIndex >= 0; currIndex--) {
+
+				// Run on all inner elements
+				for (var innerIndex = 0; innerIndex < elementsArr.length; innerIndex++) {
+
+					// The first run - fill the lists
+					if (currIndex == splittedArr.length - 2) {
+
+						var parentElementName;
+
+						// If class
+						if (splittedArr[currIndex].startsWith('.')) {
+							parentElementName = elementsArr[innerIndex].parentElement.classList;
+
+							if (parentElementName.contains(splittedArr[currIndex].substring(1, splittedArr[currIndex].length))) {
+								hierarchialList.push(elementsArr[innerIndex]);
+								checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+							}
+
+						}
+						// If ID
+						else if (splittedArr[currIndex].startsWith('#')) {
+							parentElementName = elementsArr[innerIndex].parentElement.id;
+
+							if (parentElementName == splittedArr[currIndex].substring(1, splittedArr[currIndex].length)) {
+								hierarchialList.push(elementsArr[innerIndex]);
+								checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+							}
+						}
+						// If tagName
+						else {
+							parentElementName = elementsArr[innerIndex].parentElement.tagName;
+
+							if (parentElementName === splittedArr[currIndex].toUpperCase()) {
+								hierarchialList.push(elementsArr[innerIndex]);
+								checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+							}
+						}
+					}
+					else {
+
+						var parentElementName;
+
+						// Class
+						if (splittedArr[currIndex].startsWith('.')) {
+
+							parentElementName = elementsArr[innerIndex].parentElement.classList;
+
+							if (parentElementName.contains(splittedArr[currIndex].substring(1, splittedArr[currIndex].length))) {
+								checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+							}
+							else {
+								elementsToDelete.push(innerIndex);
+							}
+						}
+						// ID
+						else if (splittedArr[currIndex].startsWith('#')) {
+
+							parentElementName = elementsArr[innerIndex].parentElement.id;
+
+							if (parentElementName == splittedArr[currIndex].substring(1, splittedArr[currIndex].length)) {
+								checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+							}
+							else {
+								elementsToDelete.push(innerIndex);
+							}
+						}
+						// TagName
+						else {
+
+							parentElementName = elementsArr[innerIndex].parentElement.tagName;
+
+
+							if (parentElementName == splittedArr[currIndex].toUpperCase()) {
+								checkHierarchialList.push(elementsArr[innerIndex].parentElement);
+							}
+							else {
+								elementsToDelete.push(innerIndex);
+							}
+						}
+					}
+				}
+
+				// Delete the elements
+				for (var deleteIndex = elementsToDelete.length - 1; deleteIndex >= 0; deleteIndex--) {
+					hierarchialList.splice(elementsToDelete[deleteIndex], 1);
+				}
+
+				elementsToDelete = [];
+				elementsArr = checkHierarchialList;
+				checkHierarchialList = [];
+			}
+
+			return (hierarchialList);
+		}
+
 		queryExecution(query){
 
 			var returnValue;
 
 			switch (true){
-				// Hierarchical
-				case (query.indexOf(' ') != -1):
-
-					var arr = query.split(" ");
-					var hierarchialList = [];
-					var checkHierarchialList = [];
-
-					var elementsToDelete = [];
-
-					// Select the inner element
-					if (arr[arr.length - 1].startsWith('.')){
-						var elementsArr = document.getElementsByClassName(arr[arr.length - 1].substring(1, arr[arr.length - 1].length));
-					}
-					else if (arr[arr.length - 1].startsWith('#')){
-						var elementsArr = document.getElementById(arr[arr.length - 1].substring(1, arr[arr.length - 1].length));
-					}
-					else {
-						var elementsArr = document.getElementsByTagName(arr[arr.length - 1]);
-					}
-
-					//
-					for (var currIndex = arr.length - 2; currIndex >= 0 ; currIndex--){
-
-						for (var innerIndex = 0; innerIndex < elementsArr.length; innerIndex++){
-
-							if (currIndex == arr.length - 2) {
-
-								var parentElementName;
-
-								if (arr[currIndex].startsWith('.')){
-									parentElementName = elementsArr[innerIndex].parentElement.classList;
-
-									if (parentElementName.contains(arr[currIndex].toLowerCase().substring(1, arr[currIndex].length))) {
-										hierarchialList.push(elementsArr[innerIndex]);
-										checkHierarchialList.push(elementsArr[innerIndex].parentElement);
-									}
-
-								}
-								else if (arr[currIndex].startsWith('#')){
-									parentElementName = elementsArr[innerIndex].parentElement.id;
-
-									if (parentElementName == arr[currIndex].toLowerCase().substring(1, arr[currIndex].length)) {
-										hierarchialList.push(elementsArr[innerIndex]);
-										checkHierarchialList.push(elementsArr[innerIndex].parentElement);
-									}
-								}
-								else {
-									parentElementName = elementsArr[innerIndex].parentElement.tagName;
-								}
-
-								if (parentElementName === arr[currIndex].toUpperCase()) {
-									hierarchialList.push(elementsArr[innerIndex]);
-									checkHierarchialList.push(elementsArr[innerIndex].parentElement);
-								}
-							}
-							else {
-
-								var parentElementName;
-
-								if (arr[currIndex].startsWith('.')){
-									parentElementName = elementsArr[innerIndex].parentElement.classList;
-
-									if (parentElementName.contains(arr[currIndex].toLowerCase().substring(1, arr[currIndex].length))) {
-										checkHierarchialList.push(elementsArr[innerIndex].parentElement);
-									}
-								}
-								else if (arr[currIndex].startsWith('#')){
-									parentElementName = elementsArr[innerIndex].parentElement.id;
-
-									if (parentElementName == arr[currIndex].toLowerCase().substring(1, arr[currIndex].length)) {
-										checkHierarchialList.push(elementsArr[innerIndex].parentElement);
-									}
-								}
-								else {
-									parentElementName = elementsArr[innerIndex].parentElement.tagName;
-								}
-
-								if (arr[currIndex].startsWith('.') &&
-									(parentElementName.contains(arr[currIndex].toLowerCase().substring(1, arr[currIndex].length)))){
-
-									checkHierarchialList.push(elementsArr[innerIndex].parentElement);
-								}
-								else if (arr[currIndex].startsWith('#') &&
-										 parentElementName == arr[currIndex].toLowerCase().substring(1, arr[currIndex].length)){
-									checkHierarchialList.push(elementsArr[innerIndex].parentElement);
-								}
-								else if (parentElementName != arr[currIndex].toUpperCase()) {
-									elementsToDelete.push(innerIndex);
-								}
-								else {
-									checkHierarchialList.push(elementsArr[innerIndex].parentElement);
-								}
-							}
-						}
-
-						// Delete the elements
-						for (var deleteIndex = elementsToDelete.length - 1; deleteIndex >= 0; deleteIndex--){
-							hierarchialList.splice(elementsToDelete[deleteIndex], 1);
-						}
-
-						elementsToDelete = [];
-						elementsArr = checkHierarchialList;
-						checkHierarchialList = [];
-					}
-
-					return (hierarchialList);
+				// Hierarchical Select
+				 case (query.indexOf(' ') != -1):
+					 returnValue = this.hierarchicalSelect(query);
 
 					break;
 				// Class
@@ -275,11 +290,6 @@
 		get(index){
 			return (this.result.indexOf(index));
 		}
-
-
-
-
-
 	}
 
 function $(parameter){
